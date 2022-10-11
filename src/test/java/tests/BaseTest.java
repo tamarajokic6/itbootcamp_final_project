@@ -7,21 +7,21 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import pages.HomePage;
-import pages.LoginPage;
+import pages.*;
 
 import java.time.Duration;
-
-import static java.util.concurrent.TimeUnit.SECONDS;
 
 public abstract class BaseTest {
 
     protected WebDriver driver;
     protected WebDriverWait wait;
     protected LoginPage loginPage;
-    protected LoginTest loginTest;
+    protected SignUpPage signUpPage;
+    protected AdminCitiesPage adminCities;
     protected Faker faker;
-protected HomePage homePage;
+    protected HomePage homePage;
+    protected LocalePage localePage;
+    protected ProfilePage profilePage;
 
     @BeforeClass
     public void setup() {
@@ -29,18 +29,21 @@ protected HomePage homePage;
         driver = new ChromeDriver();
         this.loginPage = new LoginPage(driver);
         this.homePage = new HomePage(driver);
-    }
-
-    public void baseUrl() {
-        driver.get("https://vue-demo.daniel-avellaneda.com");
+        this.signUpPage = new SignUpPage(driver);
+        this.adminCities = new AdminCitiesPage(driver);
+        this.localePage = new LocalePage(driver);
+        this.profilePage = new ProfilePage(driver);
+        this.faker = new Faker();
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(3));
     }
 
     @BeforeMethod
     public void beforeMethod() {
         driver.get("https://vue-demo.daniel-avellaneda.com");
         driver.manage().deleteAllCookies();
-        this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-        this.driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+        this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        this.driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(3));
+
 
     }
 
