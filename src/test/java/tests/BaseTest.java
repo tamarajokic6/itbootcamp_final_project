@@ -41,7 +41,7 @@ public abstract class BaseTest {
     public void beforeMethod() {
         driver.get("https://vue-demo.daniel-avellaneda.com");
         driver.manage().deleteAllCookies();
-        this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         this.driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(3));
 
 
