@@ -4,7 +4,7 @@ import com.github.javafaker.Faker;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ProfileTests extends BaseTest {
+public class ProfileTest extends BaseTest {
 
     @Test
     public void editProfile() {
