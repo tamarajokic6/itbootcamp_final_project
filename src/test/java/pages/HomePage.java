@@ -21,7 +21,6 @@ public class HomePage extends BasePage {
         return getDriver().findElement(signupButton);
     }
 
-
     public WebElement getProfileButton() {
         return getDriver().findElement(profileButton);
     }
