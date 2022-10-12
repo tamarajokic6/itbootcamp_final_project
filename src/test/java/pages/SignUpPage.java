@@ -46,12 +46,10 @@ public class SignUpPage extends BasePage {
     }
 
     public void signUp(String name, String email, String password, String confirm) {
-
         getName().sendKeys(name);
         getEmail().sendKeys(email);
         getPassword().sendKeys(password);
         getConfirmPassword().sendKeys(confirm);
         getSignUpButton().click();
-
     }
 }
