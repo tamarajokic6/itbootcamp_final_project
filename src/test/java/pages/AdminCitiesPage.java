@@ -32,7 +32,6 @@ public class AdminCitiesPage extends BasePage {
         return getDriver().findElement(citiesButton);
     }
 
-
     public WebElement getNewCity() {
         return getDriver().findElement(newCity);
     }
@@ -60,7 +59,6 @@ public class AdminCitiesPage extends BasePage {
     public WebElement getFirstRow() {
         return getDriver().findElement(firstRow);
     }
-
 
     public WebElement getDeleteButton() {
         return getDriver().findElement(deleteButton);
