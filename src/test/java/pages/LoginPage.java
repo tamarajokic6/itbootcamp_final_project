@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
 import java.util.List;
 
 public class LoginPage extends BasePage {
@@ -37,18 +38,21 @@ public class LoginPage extends BasePage {
     }
 
     public void login(String email, String password) {
+
         getEmailField().sendKeys(email);
         getPasswordField().sendKeys(password);
         getLoginButton().click();
     }
 
     public void validLogin() {
+
         getEmailField().sendKeys("admin@admin.com");
         getPasswordField().sendKeys("12345");
         getLoginButton().click();
     }
 
     public void loginToLogout() {
+
         List<WebElement> logout = getDriver().findElements(logoutButton);
         if (logout.size() == 1) {
             logout.get(0).click();
