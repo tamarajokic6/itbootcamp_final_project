@@ -81,17 +81,20 @@ public class AdminCitiesPage extends BasePage {
     }
 
     public void goToCities() {
+
         getAdminButton().click();
         getCitiesButton().click();
     }
 
     public void addCity() {
+
         getNewCity().click();
         getNameOfCity().sendKeys("Bajina Basta");
         getSaveButton().click();
     }
 
     public void editCity() {
+
         addCity();
         getEditButton().click();
         getNameOfCity().sendKeys(" - edited");
@@ -100,6 +103,7 @@ public class AdminCitiesPage extends BasePage {
     }
 
     public void searchCity(String cityBB) {
+
         getSearchField().sendKeys(cityBB);
         getSearchButton().click();
     }
