@@ -7,10 +7,9 @@ import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest {
 
-
     @Test
-
     public void visitTheLoginPage() {
+
         homePage.goToLoginPage();
         String expectedResult = "/login";
         String actualResult = loginPage.getDriver().getCurrentUrl();
@@ -19,6 +18,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void checkInputTypes() {
+
         homePage.goToLoginPage();
         String expectedResult = "email";
         String actualResult = loginPage.getDriver().findElement(By.id("email")).getAttribute("type");
@@ -30,6 +30,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void displayErrorsWhenUserDoesNotExist() {
+
         homePage.goToLoginPage();
         String expectedResult = "User does not exists";
         String emailFaker = faker.internet().emailAddress();
@@ -45,6 +46,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void displayErrorsWhenPasswordIsWrong() {
+
         homePage.goToLoginPage();
         String expectedResult = "Wrong password";
         String passwordFaker = faker.internet().password();
@@ -58,6 +60,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void login() {
+
         homePage.goToLoginPage();
         String expectedResult = "/home";
         loginPage.validLogin();
@@ -68,6 +71,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void logout() {
+
         loginPage.loginToLogout();
         homePage.goToLoginPage();
         wait.until(ExpectedConditions.urlContains("https://vue-demo.daniel-avellaneda.com/login"));
