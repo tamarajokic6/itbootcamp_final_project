@@ -52,6 +52,6 @@ public class SignUpPage extends BasePage {
         getPassword().sendKeys(password);
         getConfirmPassword().sendKeys(confirm);
         getSignUpButton().click();
-    }
 
+    }
 }
