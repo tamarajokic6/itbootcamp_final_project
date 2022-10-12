@@ -12,6 +12,7 @@ public class AdminCitiesTests extends BaseTest {
         homePage.goToLoginPage();
         loginPage.validLogin();
         adminCities.goToCities();
+
         String expectedResult = "/admin/cities";
         String actualResult = adminCities.getDriver().getCurrentUrl();
         Assert.assertTrue(actualResult.contains(expectedResult));
