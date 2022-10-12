@@ -5,20 +5,20 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class HomePage extends BasePage {
-    private By loginRedirecction = By.xpath("//*[@id=\"app\"]/div/div/header/div/div[3]/a[3]");
-    private By signUpPage = By.xpath("//*[@id=\"app\"]/div[1]/div/header/div/div[3]/a[4]");
+    private By loginButton = By.xpath("//*[@id=\"app\"]/div/div/header/div/div[3]/a[3]");
+    private By signupButton = By.xpath("//*[@id=\"app\"]/div[1]/div/header/div/div[3]/a[4]");
     private By profileButton = By.xpath("//*[@id=\"app\"]/div[1]/div/header/div/div[3]/a[3]");
 
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
-    public WebElement getLoginRedirecction() {
-        return getDriver().findElement(loginRedirecction);
+    public WebElement getLoginButton() {
+        return getDriver().findElement(loginButton);
     }
 
-    public WebElement getSignUpPage() {
-        return getDriver().findElement(signUpPage);
+    public WebElement getSignupButton() {
+        return getDriver().findElement(signupButton);
     }
 
 
@@ -27,11 +27,11 @@ public class HomePage extends BasePage {
     }
 
     public void goToLoginPage() {
-        getLoginRedirecction().click();
+        getLoginButton().click();
     }
 
     public void goToSignUpPage() {
-        getSignUpPage().click();
+        getSignupButton().click();
     }
 
     public void goToProfile() {
