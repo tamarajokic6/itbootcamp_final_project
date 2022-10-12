@@ -44,4 +44,5 @@ public class LocalePage extends BasePage {
         getLanguageButton().click();
         getFrButton().click();
     }
+
 }
