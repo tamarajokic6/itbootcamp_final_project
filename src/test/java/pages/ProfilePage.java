@@ -5,7 +5,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-
 public class ProfilePage extends BasePage {
     private By name = By.id("name");
     private By phone = By.id("phone");
@@ -14,7 +13,6 @@ public class ProfilePage extends BasePage {
     private By twitter = By.id("urlTwitter");
     private By gitHub = By.id("urlGitHub");
     private By saveButton = By.xpath("//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div/div[2]/span/form/div/div/div[8]/button");
-
     private By saveMessage = By.xpath("//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div/div[4]/div/div/div/div");
 
     public ProfilePage(WebDriver driver) {
