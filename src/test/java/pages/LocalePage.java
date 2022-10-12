@@ -31,16 +31,19 @@ public class LocalePage extends BasePage {
     }
 
     public void esLanguage() {
+
         getLanguageButton().click();
         getEsButton().click();
     }
 
     public void enLanguage() {
+
         getLanguageButton().click();
         getEnButton().click();
     }
 
     public void frLanguage() {
+
         getLanguageButton().click();
         getFrButton().click();
     }
