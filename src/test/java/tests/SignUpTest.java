@@ -10,6 +10,7 @@ public class SignUpTest extends BaseTest {
     public void goToSignupPage() {
 
         homePage.goToSignUpPage();
+
         String expectedResult = "/signup";
         String actualResult = signUpPage.getDriver().getCurrentUrl();
         Assert.assertTrue(actualResult.contains(expectedResult));
@@ -19,6 +20,7 @@ public class SignUpTest extends BaseTest {
     public void checkInputTypes() {
 
         homePage.goToSignUpPage();
+
         String expectedResult = "email";
         String actualResult = signUpPage.getDriver().findElement(By.id("email")).getAttribute("type");
         Assert.assertEquals(expectedResult, actualResult);
@@ -36,8 +38,9 @@ public class SignUpTest extends BaseTest {
     public void displayErrorsWhenUserAlreadyExists() {
 
         homePage.goToSignUpPage();
-        String expectedResult = "E-mail already exists";
         signUpPage.signUp("Test Test", "admin@admin.com", "123654", "123654");
+
+        String expectedResult = "E-mail already exists";
         String actualResult = signUpPage.getMessage().getText();
         Assert.assertTrue(actualResult.contains(expectedResult));
 
@@ -51,9 +54,10 @@ public class SignUpTest extends BaseTest {
 
         homePage.goToSignUpPage();
         String emailFaker = faker.internet().emailAddress();
-        String expectedResult = "IMPORTANT: Verify your account";
         signUpPage.signUp("Tamara Jokic", emailFaker, "123654", "123654");
         wait.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"app\"]/div[4]/div/div/div[1]"), "IMPORTANT: Verify your account"));
+
+        String expectedResult = "IMPORTANT: Verify your account";
         String actualResult = signUpPage.getImportantMessage().getText();
         Assert.assertTrue(actualResult.contains(expectedResult));
 
